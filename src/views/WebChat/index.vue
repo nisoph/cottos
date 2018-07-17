@@ -17,6 +17,7 @@
             </b-col>
         </b-row>
     </b-container>
+    <app-footer></app-footer>
   </div>
 </template>
 
