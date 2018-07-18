@@ -17,18 +17,16 @@
             </b-col>
         </b-row>
     </b-container>
-    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
 import AppNav from '../../components/AppNav';
-import AppFooter from '../../components/Footer';
 
 export default {
   name: 'home',
   components: {
-    AppNav, AppFooter,
+    AppNav,
   },
   methods: {
     isLoggedIn() {

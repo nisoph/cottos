@@ -23,12 +23,11 @@
 
 <script>
 import AppNav from '../../components/AppNav';
-import AppFooter from '../../components/Footer';
 
 export default {
   name: 'home',
   components: {
-    AppNav, AppFooter,
+    AppNav,
   },
   methods: {
     isLoggedIn() {

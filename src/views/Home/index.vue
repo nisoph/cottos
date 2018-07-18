@@ -21,6 +21,11 @@
         </b-row> -->
         <b-row>
           <b-col>
+            <carousel></carousel>
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col>
             <h5 class="p-1 mt-3 mb-4">Mis Propiedades:</h5>
             <div role="tablist">
               <b-card no-body class="mb-1">
@@ -141,18 +146,17 @@
           </b-col>
         </b-row>
     </b-container>
-    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
 import AppNav from '../../components/AppNav';
-import AppFooter from '../../components/Footer';
+import Carousel from '../../components/Carousel';
 
 export default {
   name: 'home',
   components: {
-    AppNav, AppFooter,
+    Carousel, AppNav,
   },
   methods: {
     isLoggedIn() {
