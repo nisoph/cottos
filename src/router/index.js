@@ -5,6 +5,7 @@ import Home from '@/views/Home/index';
 import Notifications from '@/views/Notifications/index';
 import Profile from '@/views/Profile/index';
 import Promotions from '@/views/Promotions/index';
+import Bookings from '@/views/Bookings/index';
 import Regulation from '@/views/Regulation/index';
 import Reports from '@/views/Reports/index';
 import WebChat from '@/views/WebChat/index';
@@ -36,6 +37,11 @@ export default new Router({
       path: '/promotions',
       name: 'promotions',
       component: Promotions,
+    },
+    {
+      path: '/bookings',
+      name: 'bookings',
+      component: Bookings,
     },
     {
       path: '/regulation',

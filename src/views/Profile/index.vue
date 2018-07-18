@@ -38,7 +38,7 @@
 import AppNav from '../../components/AppNav';
 
 export default {
-  name: 'home',
+  name: 'profile',
   components: {
     AppNav,
   },

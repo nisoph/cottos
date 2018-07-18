@@ -24,7 +24,7 @@
 import AppNav from '../../components/AppNav';
 
 export default {
-  name: 'home',
+  name: 'reports',
   components: {
     AppNav,
   },

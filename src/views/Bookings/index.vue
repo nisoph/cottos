@@ -4,7 +4,7 @@
 
     <b-container class="mt-3">
         <b-row>
-            <b-col><h3 class="text-center">Avisos</h3></b-col>
+            <b-col><h3 class="text-center">Bookings</h3></b-col>
         </b-row>
     </b-container>
 
@@ -24,7 +24,7 @@
 import AppNav from '../../components/AppNav';
 
 export default {
-  name: 'notifications',
+  name: 'bookings',
   components: {
     AppNav,
   },

@@ -10,6 +10,7 @@
         <b-nav-item href="#" to="/profile"><icon name="user"></icon> Perfil</b-nav-item>
         <b-nav-item href="#" to="/notifications"><icon name="bell"></icon> Avisos <b-badge variant="danger" style="vertical-align: super;">2</b-badge></b-nav-item>
         <b-nav-item href="#" to="/promotions"><icon name="shopping-bag"></icon> Promociones</b-nav-item>
+        <b-nav-item href="#" to="/bookings"><icon name="calendar"></icon> Reservar</b-nav-item>
         <b-nav-item href="#" to="/regulation"><icon name="gavel"></icon> Reglamentos</b-nav-item>
         <b-nav-item href="#" to="/reports"><icon name="file"></icon> Reportes</b-nav-item>
         <b-nav-item href="#" to="/chat"><icon name="comment"></icon> Chat <b-badge variant="danger" style="vertical-align: super;">1</b-badge></b-nav-item>
