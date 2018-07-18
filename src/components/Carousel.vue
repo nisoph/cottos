@@ -15,23 +15,23 @@
       <!-- Text slides with image -->
       <b-carousel-slide caption="Publicidad 1"
                         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                        img-blank img-src="https://picsum.photos/1024/480/?image=52"
+                        img-blank img-src="https://picsum.photos/1024/300/?image=52"
       ></b-carousel-slide>
 
       <!-- Slides with custom text -->
       <b-carousel-slide caption="Publicidad 2"
                         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                        img-blank img-src="https://picsum.photos/1024/480/?image=54">
+                        img-blank img-src="https://picsum.photos/1024/300/?image=54">
       </b-carousel-slide>
 
       <b-carousel-slide caption="Publicidad 3"
                         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                        img-blank img-src="https://picsum.photos/1024/480/?image=58">
+                        img-blank img-src="https://picsum.photos/1024/300/?image=58">
       </b-carousel-slide>
 
       <b-carousel-slide caption="Publicidad 4"
                         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                        img-blank img-src="https://picsum.photos/1024/480/?image=55">
+                        img-blank img-src="https://picsum.photos/1024/300/?image=55">
       </b-carousel-slide>
 
       <!-- Slide with blank fluid image to maintain slide aspect ratio -->

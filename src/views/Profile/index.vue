@@ -45,7 +45,7 @@ export default {
   data() {
     return {
       items: [
-        { first_name: 'Dickerson', last_name: 'Macdonald', email: 'erik.macias@gmail.com', password: '********' },
+        { first_name: 'Erik', last_name: 'Macias', email: 'erik.macias@gmail.com', password: '********' },
       ],
     };
   },
