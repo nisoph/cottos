@@ -2,7 +2,7 @@
   <div>
     <app-nav></app-nav>
 
-    <b-container style="margin-top: 20px">
+    <b-container class="mt-3">
         <b-row>
             <b-col><h3 class="text-center">Bienvenido, Erik Macias!</h3></b-col>
         </b-row>

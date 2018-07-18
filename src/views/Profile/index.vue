@@ -2,9 +2,9 @@
   <div>
     <app-nav></app-nav>
 
-    <b-container style="margin-top: 20px">
+    <b-container class="mt-3">
         <b-row>
-            <b-col><h2 class="text-center">Mi Perfil</h2></b-col>
+            <b-col><h3 class="text-center">Mi Perfil</h3></b-col>
         </b-row>
     </b-container>
 
@@ -13,7 +13,21 @@
     <b-container>
         <b-row>
             <b-col>
-
+              <b-row>
+                <b-col class="mb-3">
+                  <b-img center rounded thumbnail fluid src="https://picsum.photos/150/150/?image=58" alt="Thumbnail" />
+                </b-col>
+              </b-row>
+              <b-row>
+                <b-col>
+                  <b-table stacked :items="items"></b-table>
+                </b-col>
+              </b-row>
+              <b-row>
+                <b-col class="mb-3">
+                  <b-button class="btn-block" size="md" variant="danger">Editar</b-button>
+                </b-col>
+              </b-row>
             </b-col>
         </b-row>
     </b-container>
@@ -27,6 +41,13 @@ export default {
   name: 'home',
   components: {
     AppNav,
+  },
+  data() {
+    return {
+      items: [
+        { first_name: 'Dickerson', last_name: 'Macdonald', email: 'erik.macias@gmail.com', password: '********' },
+      ],
+    };
   },
   methods: {
     isLoggedIn() {
