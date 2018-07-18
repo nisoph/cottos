@@ -15,7 +15,7 @@
             <b-col>
               <b-row>
                 <b-col class="mb-3">
-                  <b-img center rounded thumbnail fluid src="https://picsum.photos/150/150/?image=58" alt="Thumbnail" />
+                  <b-img center rounded="circle" thumbnail fluid src="https://picsum.photos/150/150/?image=58" alt="Thumbnail" />
                 </b-col>
               </b-row>
               <b-row>
