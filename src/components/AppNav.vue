@@ -2,7 +2,7 @@
   <b-navbar toggleable="md" type="dark" variant="dark" sticky>
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
     <b-navbar-brand href="#">
-      <img src="../assets/nisoph_logo.png" class="d-inline-block align-top" alt="Nisoph"> <span>Cottos</span>
+      <img src="../assets/nisoph_logo.png" class="d-inline-block align-top" alt="Konddos"> <span>Konddos</span>
     </b-navbar-brand>
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav class="ml-auto">
