@@ -3,9 +3,20 @@
     <app-nav></app-nav>
 
     <b-container class="mt-3">
-        <b-row>
-            <b-col><h3 class="text-center">Bienvenido, Erik Macias!</h3></b-col>
-        </b-row>
+      <b-row>
+        <b-col>
+          <div>
+            <b-alert :show="dismissCountDown" dismissible variant="warning"
+                     @dismissed="dismissCountDown=0"
+                     @dismiss-count-down="countDownChanged">
+              Notificación: Suspensión del servicio de recolección de basura. <a href="#" class="alert-link">Más información</a>.
+            </b-alert>
+          </div>
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col><h3 class="text-center">Bienvenido, Erik Macias!</h3></b-col>
+      </b-row>
     </b-container>
 
     <hr/>
@@ -152,11 +163,28 @@ export default {
   components: {
     AppNav,
   },
+  data() {
+    return {
+      dismissSecs: 7,
+      dismissCountDown: 0,
+    };
+  },
   methods: {
+    countDownChanged(dismissCountDown) {
+      this.dismissCountDown = dismissCountDown;
+    },
+
+    showAlert() {
+      this.dismissCountDown = this.dismissSecs;
+    },
+
     isLoggedIn() {
       // return isLoggedIn();
       return true;
     },
+  },
+  mounted() {
+    this.showAlert();
   },
 };
 </script>
