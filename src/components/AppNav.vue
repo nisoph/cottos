@@ -6,7 +6,7 @@
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav class="mr-auto mt-3 text-right">
-        <!-- <b-nav-item href="#" to="/"><icon name="home"></icon> Inicio</b-nav-item> -->
+        <b-nav-item href="#" to="/"><icon name="home"></icon> Inicio</b-nav-item>
         <b-nav-item href="#" to="/profile"><icon name="user"></icon> Perfil</b-nav-item>
         <b-nav-item href="#" to="/notifications"><icon name="bell"></icon> Avisos <b-badge variant="danger" style="vertical-align: super;">2</b-badge></b-nav-item>
         <b-nav-item href="#" to="/promotions"><icon name="shopping-bag"></icon> Servicios</b-nav-item>

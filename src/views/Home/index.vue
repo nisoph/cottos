@@ -74,7 +74,7 @@
               </b-card>
               <b-card no-body class="mb-1">
                 <b-card-header header-tag="header" class="p-1" role="tab">
-                  <b-btn block href="#" v-b-toggle.accordion2 variant="light"><b>Coto 3 - Casa #62</b></b-btn>
+                  <b-btn block href="#" v-b-toggle.accordion2 variant="light"><b>Coto 1 - Casa #62</b></b-btn>
                 </b-card-header>
                 <b-collapse id="accordion2" accordion="my-accordion" role="tabpanel">
                   <b-card-body>
@@ -112,7 +112,7 @@
               </b-card>
               <b-card no-body class="mb-1">
                 <b-card-header header-tag="header" class="p-1" role="tab">
-                  <b-btn block href="#" v-b-toggle.accordion3 variant="light"><b>Coto 3 - Casa #88</b></b-btn>
+                  <b-btn block href="#" v-b-toggle.accordion3 variant="light"><b>Coto 1 - Casa #88</b></b-btn>
                 </b-card-header>
                 <b-collapse id="accordion3" accordion="my-accordion" role="tabpanel">
                   <b-card-body>
