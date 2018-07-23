@@ -9,7 +9,7 @@
             <b-alert :show="dismissCountDown" dismissible variant="warning"
                      @dismissed="dismissCountDown=0"
                      @dismiss-count-down="countDownChanged">
-              Notificación: Suspensión del servicio de recolección de basura. <a href="#" class="alert-link">Más información</a>.
+              Suspensión del servicio de recolección de basura. <a href="#" class="alert-link">Más información</a>.
             </b-alert>
           </div>
         </b-col>
