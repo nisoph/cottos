@@ -4,19 +4,19 @@
 
     <b-container class="mt-3">
         <b-row>
-            <b-col><h3 class="text-center">Anuncios y Promociones</h3></b-col>
+            <b-col><h3 class="text-center">Servicios y Promociones</h3></b-col>
         </b-row>
     </b-container>
 
     <hr/>
 
     <b-container>
-      <b-row>
+      <b-row class="mb-5">
         <b-col>
           <carousel></carousel>
         </b-col>
       </b-row>
-      <b-row class="mt-5">
+      <b-row class="mt-2">
         <b-col>
           <b-img blank width="250" height="250" blank-color="#999" thumbnail fluid src="https://picsum.photos/250/250/?image=54" alt="Thumbnail" />
         </b-col>
@@ -30,7 +30,7 @@
           <b-img blank width="250" height="250" blank-color="#999" thumbnail fluid src="https://picsum.photos/250/250/?image=59" alt="Thumbnail" />
         </b-col>
       </b-row>
-      <b-row class="mt-5">
+      <b-row class="mt-2">
         <b-col>
           <b-img blank width="250" height="250" blank-color="#999" thumbnail fluid src="https://picsum.photos/250/250/?image=54" alt="Thumbnail" />
         </b-col>
@@ -44,7 +44,7 @@
           <b-img blank width="250" height="250" blank-color="#999" thumbnail fluid src="https://picsum.photos/250/250/?image=59" alt="Thumbnail" />
         </b-col>
       </b-row>
-      <b-row class="mt-5">
+      <b-row class="mt-2">
         <b-col>
           <b-img blank width="250" height="250" blank-color="#999" thumbnail fluid src="https://picsum.photos/250/250/?image=54" alt="Thumbnail" />
         </b-col>
@@ -58,7 +58,7 @@
           <b-img blank width="250" height="250" blank-color="#999" thumbnail fluid src="https://picsum.photos/250/250/?image=59" alt="Thumbnail" />
         </b-col>
       </b-row>
-      <b-row class="mt-5 mb-5">
+      <b-row class="mt-2 mb-2">
         <b-col>
           <b-img blank width="250" height="250" blank-color="#999" thumbnail fluid src="https://picsum.photos/250/250/?image=54" alt="Thumbnail" />
         </b-col>
