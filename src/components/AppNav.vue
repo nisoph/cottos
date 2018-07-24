@@ -6,6 +6,7 @@
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav class="ml-auto mt-3 text-right">
+        <div class="logo d-md-none d-lg-none d-xl-none"></div>
         <b-nav-item href="#" to="/"><icon name="home"></icon> Inicio</b-nav-item>
         <b-nav-item href="#" to="/profile"><icon name="user"></icon> Perfil</b-nav-item>
         <b-nav-item href="#" to="/notifications"><icon name="bell"></icon> Avisos <b-badge variant="danger" style="vertical-align: super;">2</b-badge></b-nav-item>
@@ -14,9 +15,9 @@
         <b-nav-item href="#" to="/regulation"><icon name="gavel"></icon> Reglamentos</b-nav-item>
         <b-nav-item href="#" to="/reports"><icon name="file"></icon> Reportes</b-nav-item>
         <!-- <b-nav-item href="#" to="/chat"><icon name="comment"></icon> Chat <b-badge variant="danger" style="vertical-align: super;">1</b-badge></b-nav-item> -->
-        <b-nav-item class="dropdown-divider d-md-none d-lg-none d-xl-none"></b-nav-item>
+        <div class="logo d-md-none mb-2 d-lg-none d-xl-none"></div>
         <b-button variant="danger" size="sm" type="submit"><icon name="exclamation-triangle"></icon> Emergencia</b-button>
-        <b-nav-item class="dropdown-divider d-md-none d-lg-none d-xl-none"></b-nav-item>
+        <div class="logo d-md-none mt-2 d-lg-none d-xl-none"></div>
         <b-nav-item href="#" @click="handleLogin()" hidden><icon name="sign-in"></icon> Ingresar</b-nav-item>
         <b-nav-item href="#" @click="handleLogout()"><icon name="sign-out"></icon> Salir</b-nav-item>
       </b-navbar-nav>
@@ -48,4 +49,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scope>
+
+.logo {
+  border-bottom: 1px solid hsla(0,0%,100%,.2);
+}
+
 </style>

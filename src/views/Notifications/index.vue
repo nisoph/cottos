@@ -10,7 +10,7 @@
 
     <hr/>
 
-    <b-container>        
+    <b-container>
         <b-row>
             <b-col>
               <b-card-group deck class="mb-3">
