@@ -5,7 +5,7 @@
     </b-navbar-brand>
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
     <b-collapse is-nav id="nav_collapse">
-      <b-navbar-nav class="ml-auto mt-3 text-right">
+      <b-navbar-nav class="ml-auto text-right">
         <div class="logo d-md-none d-lg-none d-xl-none"></div>
         <b-nav-item href="#" to="/"><icon name="home"></icon> Inicio</b-nav-item>
         <b-nav-item href="#" to="/profile"><icon name="user"></icon> Perfil</b-nav-item>
