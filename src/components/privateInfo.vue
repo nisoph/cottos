@@ -4,7 +4,7 @@
     <h3 class="text-center">Secret Info</h3>
     <hr/>
 
-    <div class="col-sm-4" v-for="info in privateInfo">
+    <div class="col-sm-4" v-for="info in privateInfo" :key="info.id">
       <div class="panel panel-danger">
         <div class="panel-heading">
           <h3 class="panel-title"> {{ info.id }} </h3>
