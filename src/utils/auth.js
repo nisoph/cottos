@@ -1,41 +1,40 @@
-import decode from 'jwt-decode';
 import axios from 'axios';
-import auth0 from 'auth0-js';
-import Router from 'vue-router';
-import Auth0Lock from 'auth0-lock';
-const ID_TOKEN_KEY = 'id_token';
-const ACCESS_TOKEN_KEY = 'access_token';
+import { API_END_POINT, ID_TOKEN_KEY } from '../app.config';
 
-const CLIENT_ID = '{AUTH0_CLIENT_ID}';
-const CLIENT_DOMAIN = '{AUTH0_DOMAIN}';
+/*
+const ACCESS_TOKEN_KEY = 'access_token';
 const REDIRECT = 'YOUR_CALLBACK_URL';
 const SCOPE = '{SCOPE}';
-const AUDIENCE = 'AUDIENCE_ATTRIBUTE';
+const AUDIENCE = 'AUDIENCE_ATTRIBUTE'; */
 
-var auth = new auth0.WebAuth({
-  clientID: CLIENT_ID,
-  domain: CLIENT_DOMAIN
-});
+export function getIdToken() {
+  return localStorage.getItem(ID_TOKEN_KEY);
+}
 
-export function login() {
-  auth.authorize({
-    responseType: 'token id_token',
-    redirectUri: REDIRECT,
-    audience: AUDIENCE,
-    scope: SCOPE
+export function login(value) {
+  return new Promise((resolve, reject) => {
+    axios.post(`${API_END_POINT}/auth/login`, value)
+      .then((res) => {
+        resolve(res.data);
+      })
+      .catch((err) => {
+        reject(err.response.data);
+      });
   });
 }
 
-var router = new Router({
-   mode: 'history',
-});
-
-export function logout() {
-  clearIdToken();
-  clearAccessToken();
-  router.go('/');
+export function isLoggedIn() {
+  const idToken = getIdToken();
+  return !!idToken;
 }
 
+export function logout() {
+  localStorage.removeItem(ID_TOKEN_KEY);
+  // clearAccessToken();
+  // router.go('/');
+}
+
+/*
 export function requireAuth(to, from, next) {
   if (!isLoggedIn()) {
     next({
@@ -47,16 +46,8 @@ export function requireAuth(to, from, next) {
   }
 }
 
-export function getIdToken() {
-  return localStorage.getItem(ID_TOKEN_KEY);
-}
-
 export function getAccessToken() {
   return localStorage.getItem(ACCESS_TOKEN_KEY);
-}
-
-function clearIdToken() {
-  localStorage.removeItem(ID_TOKEN_KEY);
 }
 
 function clearAccessToken() {
@@ -81,11 +72,6 @@ export function setIdToken() {
   localStorage.setItem(ID_TOKEN_KEY, idToken);
 }
 
-export function isLoggedIn() {
-  const idToken = getIdToken();
-  return !!idToken && !isTokenExpired(idToken);
-}
-
 function getTokenExpirationDate(encodedToken) {
   const token = decode(encodedToken);
   if (!token.exp) { return null; }
@@ -99,4 +85,4 @@ function getTokenExpirationDate(encodedToken) {
 function isTokenExpired(token) {
   const expirationDate = getTokenExpirationDate(token);
   return expirationDate < new Date();
-}
+} */

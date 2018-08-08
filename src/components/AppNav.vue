@@ -7,41 +7,34 @@
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav class="ml-auto text-right">
         <div class="logo d-md-none d-lg-none d-xl-none"></div>
-        <b-nav-item href="#" to="/"><icon name="home"></icon> Inicio</b-nav-item>
-        <b-nav-item href="#" to="/profile"><icon name="user"></icon> Perfil</b-nav-item>
-        <b-nav-item href="#" to="/notifications"><icon name="bell"></icon> Avisos <b-badge variant="danger" style="vertical-align: super;">2</b-badge></b-nav-item>
-        <b-nav-item href="#" to="/promotions"><icon name="shopping-bag"></icon> Servicios</b-nav-item>
-        <b-nav-item href="#" to="/bookings"><icon name="calendar"></icon> Reservar</b-nav-item>
-        <b-nav-item href="#" to="/regulation"><icon name="gavel"></icon> Reglamentos</b-nav-item>
-        <b-nav-item href="#" to="/reports"><icon name="file"></icon> Reportes</b-nav-item>
-        <!-- <b-nav-item href="#" to="/chat"><icon name="comment"></icon> Chat <b-badge variant="danger" style="vertical-align: super;">1</b-badge></b-nav-item> -->
+        <!-- <b-nav-item href="#" to="/"><icon name="home"></icon> Inicio</b-nav-item> -->
+        <b-nav-item href="#" to="/resident/profile"><icon name="user"></icon> Perfil</b-nav-item>
+        <b-nav-item href="#" to="/resident/notifications"><icon name="bell"></icon> Avisos <b-badge variant="danger" style="vertical-align: super;">2</b-badge></b-nav-item>
+        <b-nav-item href="#" to="/resident/promotions"><icon name="shopping-bag"></icon> Servicios</b-nav-item>
+        <b-nav-item href="#" to="/resident/bookings"><icon name="calendar"></icon> Reservar</b-nav-item>
+        <b-nav-item href="#" to="/resident/regulation"><icon name="gavel"></icon> Reglamentos</b-nav-item>
+        <b-nav-item href="#" to="/resident/reports"><icon name="file"></icon> Reportes</b-nav-item>
         <div class="logo d-md-none mb-2 d-lg-none d-xl-none"></div>
         <b-button variant="danger" size="sm" type="submit"><icon name="exclamation-triangle"></icon> Emergencia</b-button>
         <div class="logo d-md-none mt-2 d-lg-none d-xl-none"></div>
-        <b-nav-item href="#" @click="handleLogin()" hidden><icon name="sign-in"></icon> Ingresar</b-nav-item>
-        <b-nav-item href="#" @click="handleLogout()"><icon name="sign-out"></icon> Salir</b-nav-item>
+        <b-nav-item href="#" @click="handleLogout()" v-if="isLoggedIn"><icon name="sign-out"></icon> Salir</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
 </template>
 
 <script>
-// import { isLoggedIn, login, logout } from '../../utils/auth';
+import { isLoggedIn, logout } from '../utils/auth';
 
 export default {
   name: 'app-nav',
   methods: {
-    handleLogin() {
-      // login();
-      return true;
-    },
     handleLogout() {
-      // logout();
-      return false;
+      logout();
+      this.$router.push('/');
     },
     isLoggedIn() {
-      // return isLoggedIn();
-      return true;
+      return isLoggedIn();
     },
   },
 };
