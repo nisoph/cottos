@@ -3,7 +3,7 @@ import Router from 'vue-router';
 
 import Login from '@/views/Login/index';
 import Unauthorized from '@/views/Unauthorized/index';
-import Profile from '@/views/Sections/Profile/index';
+import Profile from '@/views/Profile/index';
 import ResidentHome from '@/views/Sections/Resident/Home/index';
 import ResidentNotifications from '@/views/Sections/Resident/Notifications/index';
 import ResidentPromotions from '@/views/Sections/Resident/Promotions/index';
@@ -30,8 +30,8 @@ const routes = [
     component: Unauthorized,
   },
   {
-    path: '/profile',
-    name: 'profile',
+    path: '/info/profile',
+    name: 'info-profile',
     component: Profile,
     meta: {
       requiresAuth: true,
@@ -61,17 +61,6 @@ const routes = [
       adminAuth: false,
       residentAuth: true,
       securityAuth: false },
-  },
-  {
-    path: '/resident/profile',
-    name: 'profile',
-    component: Profile,
-    meta: {
-      requiresAuth: true,
-      sAdminAuth: true,
-      adminAuth: true,
-      residentAuth: true,
-      securityAuth: true },
   },
   {
     path: '/resident/promotions',

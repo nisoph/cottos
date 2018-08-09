@@ -12,7 +12,7 @@ export function getIdToken() {
 }
 
 export function getUserRole() {
-  const idToken = localStorage.getItem(ID_TOKEN_KEY);
+  const idToken = JSON.parse(window.localStorage.getItem(ID_TOKEN_KEY));
   return idToken.data.role;
 }
 
