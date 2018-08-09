@@ -1,6 +1,7 @@
 <template>
   <div>
-    <app-nav></app-nav>
+    <app-nav v-if="isResident"></app-nav>
+    <app-nav-simple v-if="!isResident"></app-nav-simple>
 
     <b-container class="mt-3">
         <b-row>
@@ -35,12 +36,14 @@
 </template>
 
 <script>
-import AppNav from '../../../../components/AppNav';
+import AppNav from '../../../components/AppNav';
+import AppNavSimple from '../../../components/AppNavSimple';
+import { isSuperAdmin, isResidentAdmin, isResident, isResidentSecurity } from '../../../utils/auth';
 
 export default {
-  name: 'resident-profile',
+  name: 'profile',
   components: {
-    AppNav,
+    AppNav, AppNavSimple,
   },
   data() {
     return {
@@ -50,9 +53,17 @@ export default {
     };
   },
   methods: {
-    isLoggedIn() {
-      // return isLoggedIn();
-      return true;
+    isSAdminRole() {
+      return isSuperAdmin();
+    },
+    isAdminRole() {
+      return isResidentAdmin();
+    },
+    isResidentRole() {
+      return isResident();
+    },
+    isSecurityRole() {
+      return isResidentSecurity();
     },
   },
 };

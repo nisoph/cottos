@@ -35,7 +35,6 @@
 </template>
 
 <script>
-// import loginService from './loginService';
 import { login } from '../../utils/auth';
 import { ID_TOKEN_KEY, ROLE_SADMIN, ROLE_ADMIN, ROLE_SECURITY } from '../../app.config';
 

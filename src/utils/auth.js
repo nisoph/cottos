@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_END_POINT, ID_TOKEN_KEY } from '../app.config';
+import { API_END_POINT, ID_TOKEN_KEY, ROLE_SADMIN, ROLE_ADMIN, ROLE_RESIDENT, ROLE_SECURITY } from '../app.config';
 
 /*
 const ACCESS_TOKEN_KEY = 'access_token';
@@ -9,6 +9,11 @@ const AUDIENCE = 'AUDIENCE_ATTRIBUTE'; */
 
 export function getIdToken() {
   return localStorage.getItem(ID_TOKEN_KEY);
+}
+
+export function getUserRole() {
+  const idToken = localStorage.getItem(ID_TOKEN_KEY);
+  return idToken.role;
 }
 
 export function login(value) {
@@ -32,6 +37,22 @@ export function logout() {
   localStorage.removeItem(ID_TOKEN_KEY);
   // clearAccessToken();
   // router.go('/');
+}
+
+export function isSuperAdmin() {
+  return getUserRole() === ROLE_SADMIN;
+}
+
+export function isResidentAdmin() {
+  return getUserRole() === ROLE_ADMIN;
+}
+
+export function isResident() {
+  return getUserRole() === ROLE_RESIDENT;
+}
+
+export function isResidentSecurity() {
+  return getUserRole() === ROLE_SECURITY;
 }
 
 /*
