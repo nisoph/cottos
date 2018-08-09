@@ -1,7 +1,7 @@
 <template>
   <div>
-    <app-nav v-if="isResident"></app-nav>
-    <app-nav-simple v-if="!isResident"></app-nav-simple>
+    <app-nav v-if="isResidentRole"></app-nav>
+    <app-nav-simple v-if="!isResidentRole"></app-nav-simple>
 
     <b-container class="mt-3">
         <b-row>
