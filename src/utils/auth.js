@@ -13,7 +13,7 @@ export function getIdToken() {
 
 export function getUserRole() {
   const idToken = localStorage.getItem(ID_TOKEN_KEY);
-  return idToken.role;
+  return idToken.data.role;
 }
 
 export function login(value) {
@@ -48,8 +48,6 @@ export function isResidentAdmin() {
 }
 
 export function isResident() {
-  console.log(getUserRole());
-  console.log(getUserRole() === ROLE_RESIDENT);
   return getUserRole() === ROLE_RESIDENT;
 }
 
