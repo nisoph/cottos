@@ -21,12 +21,12 @@
 </template>
 
 <script>
-import AppNav from '../../../components/AppNav';
+import AppNavSimple from '../../../components/AppNavSimple';
 
 export default {
   name: 'sadmin-home',
   components: {
-    AppNav,
+    AppNavSimple,
   },
   methods: {
     isLoggedIn() {
