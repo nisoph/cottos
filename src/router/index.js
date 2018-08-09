@@ -30,6 +30,17 @@ const routes = [
     component: Unauthorized,
   },
   {
+    path: '/profile',
+    name: 'profile',
+    component: Profile,
+    meta: {
+      requiresAuth: true,
+      sAdminAuth: true,
+      adminAuth: true,
+      residentAuth: true,
+      securityAuth: true },
+  },
+  {
     path: '/resident/home',
     name: 'resident-home',
     component: ResidentHome,
@@ -52,7 +63,7 @@ const routes = [
       securityAuth: false },
   },
   {
-    path: '/profile',
+    path: '/resident/profile',
     name: 'profile',
     component: Profile,
     meta: {
