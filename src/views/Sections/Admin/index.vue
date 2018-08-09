@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-nav></app-nav>
+    <app-nav-simple></app-nav-simple>
 
     <b-container class="mt-3">
         <b-row>
