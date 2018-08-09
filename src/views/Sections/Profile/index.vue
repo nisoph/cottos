@@ -6,7 +6,6 @@
     <b-container class="mt-3">
         <b-row>
             <b-col><h3 class="text-center">Mi Perfil</h3></b-col>
-            <span :v-model="isResidentRole">{{isResidentRole}}</span>
         </b-row>
     </b-container>
 
@@ -66,9 +65,6 @@ export default {
     isSecurityRole() {
       return isResidentSecurity();
     },
-  },
-  mounted() {
-    this.isResidentRole();
   },
 };
 </script>

@@ -48,6 +48,8 @@ export function isResidentAdmin() {
 }
 
 export function isResident() {
+  console.log(getUserRole());
+  console.log(getUserRole() === ROLE_RESIDENT);
   return getUserRole() === ROLE_RESIDENT;
 }
 
