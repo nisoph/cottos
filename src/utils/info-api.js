@@ -2,7 +2,7 @@ import axios from 'axios';
 import { API_END_POINT, ID_TOKEN_KEY } from '../app.config';
 
 export function getIdToken() {
-  const idToken = JSON.parse(window.localStorage.getItem(ID_TOKEN_KEY));
+  const idToken = JSON.parse(localStorage.getItem(ID_TOKEN_KEY));
   return idToken.token;
 }
 
