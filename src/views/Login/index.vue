@@ -1,5 +1,6 @@
 <template>
   <b-form class="form-signin" validated @submit="onSubmit" v-if="show">
+    <b-alert variant="danger" dismissible :show="loginError" @dismissed="true">{{this.errMessage}}</b-alert>
     <div class="text-center">
       <img class="mb-4" src="../../../static/img/icons/apple-icon-114x114.png" alt="" width="72" height="72">
       <h3 class="mb-4 text-muted">Inicio de Sesión</h3>
@@ -46,7 +47,8 @@ export default {
         email: '',
         password: '',
       },
-      loginError: true,
+      loginError: false,
+      errMessage: '',
       show: true,
     };
   },
@@ -73,6 +75,8 @@ export default {
           }
         } else {
           app.$store.state.isLoggedIn = false;
+          this.loginError = true;
+          this.errMessage = res.message;
         }
       });
     },
