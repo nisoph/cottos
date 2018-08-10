@@ -1,16 +1,19 @@
 import axios from 'axios';
+import { API_END_POINT, ID_TOKEN_KEY } from '../app.config';
 
-// const BASE_URL = 'http://localhost:8080';
-const BASE_URL = 'https://reqres.in';
-
-function getPublicInfo() {
-  const url = `${BASE_URL}/api/users`;
-  return axios.get(url).then(response => response.data);
+export function getIdToken() {
+  const idToken = JSON.parse(window.localStorage.getItem(ID_TOKEN_KEY));
+  return idToken.token;
 }
 
-function getPrivateInfo() {
-  const url = `${BASE_URL}/api/users`;
-  return axios.get(url).then(response => response.data);
+export function getProfile() {
+  return new Promise((resolve, reject) => {
+    axios.get(`${API_END_POINT}/profile`, { headers: { Authorization: `Bearer ${getIdToken()}` } })
+      .then((res) => {
+        resolve(res.data);
+      })
+      .catch((err) => {
+        reject(err.response.data);
+      });
+  });
 }
-
-export { getPublicInfo, getPrivateInfo };

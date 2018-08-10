@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { login } from '../../utils/auth';
+import { login } from '../../utils/auth-api';
 import { ID_TOKEN_KEY, ROLE_SADMIN, ROLE_ADMIN, ROLE_SECURITY } from '../../app.config';
 
 export default {

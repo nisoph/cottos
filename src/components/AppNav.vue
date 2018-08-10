@@ -6,7 +6,7 @@
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav class="ml-auto text-right">
-        <div class="logo d-md-none d-lg-none d-xl-none"></div>
+        <div class="logo d-md-none d-lg-none d-xl-none mt-2"></div>
         <!-- <b-nav-item href="#" to="/"><icon name="home"></icon> Inicio</b-nav-item> -->
         <b-nav-item href="#" to="/info/profile"><icon name="user"></icon> Perfil</b-nav-item>
         <b-nav-item href="#" to="/resident/notifications"><icon name="bell"></icon> Avisos <b-badge variant="danger" style="vertical-align: super;">2</b-badge></b-nav-item>
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { isLoggedIn, logout } from '../utils/auth';
+import { isLoggedIn, logout } from '../utils/auth-api';
 
 export default {
   name: 'app-nav',

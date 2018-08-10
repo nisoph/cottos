@@ -16,17 +16,18 @@
             <b-col>
               <b-row>
                 <b-col class="mb-3">
-                  <b-img center rounded="circle" thumbnail fluid src="https://picsum.photos/150/150/?image=58" alt="Thumbnail" />
+                  <b-img v-if="profileImgUrl" center rounded="circle" thumbnail fluid :src="profileImgUrl" alt="Thumbnail" />
+                  <b-img v-if="!profileImgUrl" center rounded="circle" thumbnail fluid src="https://picsum.photos/150/150/?image=58" alt="Thumbnail" />
                 </b-col>
               </b-row>
               <b-row>
                 <b-col>
-                  <b-table stacked :items="items"></b-table>
+                  <b-table stacked :items="profileInfo"></b-table>
                 </b-col>
               </b-row>
               <b-row>
                 <b-col class="mb-3">
-                  <b-button class="btn-block" size="md" variant="danger">Editar</b-button>
+                  <b-button class="btn-block" size="md" variant="danger" disabled>Editar</b-button>
                 </b-col>
               </b-row>
             </b-col>
@@ -38,7 +39,8 @@
 <script>
 import AppNav from '../../components/AppNav';
 import AppNavSimple from '../../components/AppNavSimple';
-import { isSuperAdmin, isResidentAdmin, isResident, isResidentSecurity } from '../../utils/auth';
+import { isSuperAdmin, isResidentAdmin, isResident, isResidentSecurity } from '../../utils/auth-api';
+import { getProfile } from '../../utils/info-api';
 
 export default {
   name: 'info-profile',
@@ -47,9 +49,10 @@ export default {
   },
   data() {
     return {
-      items: [
-        { first_name: 'Erik', last_name: 'Macias', email: 'erik.macias@gmail.com', password: '********' },
+      profileInfo: [
+        { first_name: '', last_name: '', email: '', password: '********' },
       ],
+      profileImgUrl: '',
     };
   },
   methods: {
@@ -65,6 +68,17 @@ export default {
     isSecurityRole() {
       return isResidentSecurity();
     },
+    getProfileInfo() {
+      getProfile().then((profile) => {
+        this.profileInfo[0].first_name = profile.user.first_name;
+        this.profileInfo[0].last_name = profile.user.last_name;
+        this.profileInfo[0].email = profile.user.email;
+        this.profileImgUrl = profile.user.profile_img;
+      });
+    },
+  },
+  mounted() {
+    this.getProfileInfo();
   },
 };
 </script>

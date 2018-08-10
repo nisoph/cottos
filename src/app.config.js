@@ -1,5 +1,3 @@
-
-
 // export const API_END_POINT = 'http://localhost:3000/api/v1';
 export const API_END_POINT = 'https://kondify-api.herokuapp.com/api/v1';
 export const ID_TOKEN_KEY = 'userinfo';
