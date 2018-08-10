@@ -70,8 +70,8 @@ export default {
     },
     getProfileInfo() {
       getProfile().then((profile) => {
-        this.profileInfo[0].first_name = profile.user.first_name;
-        this.profileInfo[0].last_name = profile.user.last_name;
+        this.profileInfo[0].first_name = profile.user.nombre;
+        this.profileInfo[0].last_name = profile.user.apellido;
         this.profileInfo[0].email = profile.user.email;
         this.profileImgUrl = profile.user.profile_img;
       });
