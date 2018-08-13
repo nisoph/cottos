@@ -50,7 +50,7 @@ export default {
   data() {
     return {
       profileInfo: [
-        { first_name: '', last_name: '', email: '', password: '********' },
+        { nombre: '', apellido: '', email: '', password: '********' },
       ],
       profileImgUrl: '',
     };
@@ -70,8 +70,8 @@ export default {
     },
     getProfileInfo() {
       getProfile().then((profile) => {
-        this.profileInfo[0].first_name = profile.user.nombre;
-        this.profileInfo[0].last_name = profile.user.apellido;
+        this.profileInfo[0].nombre = profile.user.nombre;
+        this.profileInfo[0].apellido = profile.user.apellido;
         this.profileInfo[0].email = profile.user.email;
         this.profileImgUrl = profile.user.profile_img;
       });
