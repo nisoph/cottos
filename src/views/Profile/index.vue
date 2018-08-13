@@ -17,7 +17,7 @@
               <b-row>
                 <b-col class="mb-3">
                   <b-img v-if="profileImgUrl" center rounded="circle" thumbnail fluid :src="profileImgUrl" alt="Thumbnail" />
-                  <b-img v-if="!profileImgUrl" center rounded="circle" thumbnail fluid src="https://picsum.photos/150/150/?image=58" alt="Thumbnail" />
+                  <b-img v-else center rounded="circle" thumbnail fluid src="https://picsum.photos/150/150/?image=58" alt="Thumbnail" />
                 </b-col>
               </b-row>
               <b-row>
