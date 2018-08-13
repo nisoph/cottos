@@ -77,7 +77,7 @@ export default {
       });
     },
   },
-  beforeCreate() {
+  mounted() {
     this.getProfileInfo();
   },
 };
