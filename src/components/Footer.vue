@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="container text-center">
-				<span class="footer-txt">&copy; 2018 <a href="#">Konddos</a> Todos los derechos reservados.</span>
+				<span class="footer-txt">&copy; 2018 <a href="#">Konddify</a> Todos los derechos reservados.</span>
     </div>
   </footer>
 </template>

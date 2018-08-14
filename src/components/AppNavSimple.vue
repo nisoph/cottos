@@ -1,7 +1,7 @@
 <template>
   <b-navbar toggleable="md" type="dark" variant="dark" sticky>
     <b-navbar-brand href="#" to="/">
-      <img src="../assets/nisoph_logo.png" class="d-inline-block align-top" alt="Konddos"> <span>Konddos</span>
+      <img src="../assets/nisoph_logo.png" class="d-inline-block align-top" alt="Konddify"> <span>Konddify</span>
     </b-navbar-brand>
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
     <b-collapse is-nav id="nav_collapse">
