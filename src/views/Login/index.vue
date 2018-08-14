@@ -1,5 +1,5 @@
 <template>
-  <b-form class="form-signin" validated @submit="onSubmit" v-if="show">
+  <b-form class="form-signin" @submit="onSubmit" v-if="show">
     <b-alert variant="danger" dismissible :show="loginError" @dismissed="true">{{this.errMessage}}</b-alert>
     <div class="text-center">
       <img class="mb-4" src="../../../static/img/icons/apple-icon-114x114.png" alt="" width="72" height="72">
@@ -7,8 +7,7 @@
     </div>
     <b-form-group 
                 id="exampleInputGroup1"
-                label="Email:" label-for="email" class="text-muted font-weight-bold"
-                invalid-feedback="Ingresa un Email correcto">
+                label="Email:" label-for="email" class="text-muted font-weight-bold">
       <b-form-input 
                   id="email"
                   class="form-control"
