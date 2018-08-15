@@ -77,7 +77,12 @@ export default {
           this.loginError = true;
           this.errMessage = res.message;
         }
-      });
+      },
+        (err) => {
+          this.loginError = true;
+          this.errMessage = err.message;
+        },
+      );
     },
     loginAuth() {
       const app = this;
