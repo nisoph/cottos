@@ -12,7 +12,7 @@
     <hr/>
 
     <b-container>
-        <b-row>
+        <b-row v-if="profileLoaded">
             <b-col>
               <b-row>
                 <b-col class="mb-3">
@@ -53,6 +53,7 @@ export default {
         { nombre: '', apellido: '', email: '', password: '********' },
       ],
       profileImgUrl: '',
+      profileLoaded: false,
     };
   },
   methods: {
@@ -74,6 +75,7 @@ export default {
         this.profileInfo[0].apellido = profile.user.apellido;
         this.profileInfo[0].email = profile.user.email;
         this.profileImgUrl = profile.user.profile_img;
+        this.profileLoaded = true;
       });
     },
   },
