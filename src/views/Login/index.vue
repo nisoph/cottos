@@ -2,7 +2,7 @@
   <b-form class="form-signin" @submit="onSubmit" v-if="show">
     <b-alert variant="danger" dismissible :show="loginError" @dismissed="true">{{this.errMessage}}</b-alert>
     <div class="text-center">
-      <img class="mb-4" src="../../../static/img/icons/icon-128x128.png" alt="" width="72" height="72">
+      <img class="mb-4" src="../../assets/konddify_logo.png" alt="" height="72">
       <h3 class="mb-4 text-muted">Inicio de Sesión</h3>
     </div>
     <b-form-group 
