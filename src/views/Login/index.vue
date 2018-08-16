@@ -3,7 +3,7 @@
     <b-alert variant="danger" dismissible :show="loginError" @dismissed="true">{{this.errMessage}}</b-alert>
     <div class="text-center">
       <img class="mb-4" src="../../assets/konddify_logo.png" alt="" height="72">
-      <h3 class="mb-4 text-muted">Inicio de Sesión</h3>
+      <h3 class="mb-4 mt-5 text-muted">Inicio de Sesión</h3>
     </div>
     <b-form-group 
                 id="exampleInputGroup1"
