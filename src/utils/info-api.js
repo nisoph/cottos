@@ -6,6 +6,11 @@ export function getIdToken() {
   return idToken.token;
 }
 
+export function getUserFullName() {
+  const idToken = JSON.parse(localStorage.getItem(ID_TOKEN_KEY));
+  return idToken.data.name;
+}
+
 export function getProfile() {
   return new Promise((resolve, reject) => {
     axios.get(`${API_END_POINT}/profile`, { headers: { Authorization: `Bearer ${getIdToken()}` } })

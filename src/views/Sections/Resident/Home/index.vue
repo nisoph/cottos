@@ -15,21 +15,13 @@
         </b-col>
       </b-row>
       <b-row>
-        <b-col><h3 class="text-center">Bienvenido, Erik Macias!</h3></b-col>
+        <b-col><h3 class="text-center">Bienvenido, {{showUserFullName}}!</h3></b-col>
       </b-row>
     </b-container>
 
     <hr/>
 
     <b-container>
-        <!-- <b-row class="p-3 p-md-5">
-            <b-col>
-                <router-link class="btn btn-lg btn-success" to="/public-info">Public Info</router-link>
-            </b-col>
-            <b-col>
-                <router-link class="btn btn-lg btn-success" to="/private-info">Private Info</router-link>
-            </b-col>
-        </b-row> -->
         <b-row>
           <b-col>
             <h5 class="p-1 mt-3 mb-4">Mis Propiedades:</h5>
@@ -157,6 +149,7 @@
 
 <script>
 import AppNav from '../../../../components/AppNav';
+import { getUserFullName } from '../../../../utils/info-api';
 
 export default {
   name: 'resident-home',
@@ -167,6 +160,7 @@ export default {
     return {
       dismissSecs: 7,
       dismissCountDown: 0,
+      showUserFullName: '',
     };
   },
   methods: {
@@ -182,9 +176,15 @@ export default {
       // return isLoggedIn();
       return true;
     },
+
+    getUserFullname() {
+      this.showUserFullName = getUserFullName();
+    },
+
   },
   mounted() {
     this.showAlert();
+    this.getUserFullname();
   },
 };
 </script>
