@@ -36,7 +36,7 @@
 
 <script>
 import { login } from '../../utils/auth-api';
-import { ID_TOKEN_KEY, ROLE_SADMIN, ROLE_ADMIN, ROLE_SECURITY } from '../../app.config';
+import { getJSONLSData, ID_LS_KEY, ROLE_SADMIN, ROLE_ADMIN, ROLE_SECURITY } from '../../app.config';
 
 export default {
   name: 'login',
@@ -64,7 +64,7 @@ export default {
           authUser.token = res.token;
           authUser.data = res.user_info;
           app.$store.state.isLoggedIn = true;
-          window.localStorage.setItem(ID_TOKEN_KEY, JSON.stringify(authUser));
+          window.localStorage.setItem(ID_LS_KEY, JSON.stringify(authUser));
           if (authUser.data.role === ROLE_SADMIN) {
             app.$router.push('/sadmin/home');
           } else if (authUser.data.role === ROLE_ADMIN) {
@@ -90,7 +90,7 @@ export default {
     },
     loginAuth() {
       const app = this;
-      const status = JSON.parse(window.localStorage.getItem(ID_TOKEN_KEY));
+      const status = getJSONLSData();
       if (status === null || status === undefined) {
         app.$router.push('/');
       } else if (status.data.role === ROLE_SADMIN) {

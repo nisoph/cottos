@@ -1,13 +1,8 @@
 import axios from 'axios';
-import { API_END_POINT, ID_TOKEN_KEY, ROLE_SADMIN, ROLE_ADMIN, ROLE_RESIDENT, ROLE_SECURITY } from '../app.config';
-
-export function getIdToken() {
-  return localStorage.getItem(ID_TOKEN_KEY);
-}
+import { getLSData, getJSONLSData, API_END_POINT, ID_LS_KEY, ROLE_SADMIN, ROLE_ADMIN, ROLE_RESIDENT, ROLE_SECURITY } from '../app.config';
 
 export function getUserRole() {
-  const idToken = JSON.parse(window.localStorage.getItem(ID_TOKEN_KEY));
-  return idToken.data.role;
+  return getJSONLSData().data.role;
 }
 
 export function login(value) {
@@ -23,12 +18,12 @@ export function login(value) {
 }
 
 export function isLoggedIn() {
-  const idToken = getIdToken();
+  const idToken = getLSData();
   return !!idToken;
 }
 
 export function logout() {
-  localStorage.removeItem(ID_TOKEN_KEY);
+  localStorage.removeItem(ID_LS_KEY);
 }
 
 export function isSuperAdmin() {

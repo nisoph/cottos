@@ -14,7 +14,7 @@ import SAdminHome from '@/views/Sections/SAdmin/index';
 import AdminHome from '@/views/Sections/Admin/index';
 import SecurityHome from '@/views/Sections/Security/index';
 
-import { ID_TOKEN_KEY, ROLE_SADMIN, ROLE_ADMIN, ROLE_RESIDENT, ROLE_SECURITY } from '../app.config';
+import { getJSONLSData, ROLE_SADMIN, ROLE_ADMIN, ROLE_RESIDENT, ROLE_SECURITY } from '../app.config';
 
 Vue.use(Router);
 
@@ -144,7 +144,7 @@ const routes = [
 const router = new Router({ routes, mode: 'history' });
 
 router.beforeEach((to, from, next) => {
-  const authUser = JSON.parse(window.localStorage.getItem(ID_TOKEN_KEY));
+  const authUser = getJSONLSData();
   if (to.meta.requiresAuth) {
     if (!authUser || !authUser.token) {
       next({ name: 'login' });

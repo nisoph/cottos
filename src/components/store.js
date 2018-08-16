@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { ID_TOKEN_KEY } from '../app.config';
+import { getLSData } from '../app.config';
 
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
-    isLoggedIn: !!localStorage.getItem(ID_TOKEN_KEY),
+    isLoggedIn: !!getLSData(),
   },
 });
 

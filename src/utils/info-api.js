@@ -1,19 +1,14 @@
 import axios from 'axios';
-import { API_END_POINT, ID_TOKEN_KEY } from '../app.config';
-
-export function getIdToken() {
-  const idToken = JSON.parse(localStorage.getItem(ID_TOKEN_KEY));
-  return idToken.token;
-}
+import { getJSONIdToken, API_END_POINT, ID_LS_KEY } from '../app.config';
 
 export function getUserFullName() {
-  const idToken = JSON.parse(localStorage.getItem(ID_TOKEN_KEY));
-  return idToken.data.name;
+  const lsData = JSON.parse(localStorage.getItem(ID_LS_KEY));
+  return lsData.data.name;
 }
 
 export function getProfile() {
   return new Promise((resolve, reject) => {
-    axios.get(`${API_END_POINT}/profile`, { headers: { Authorization: `Bearer ${getIdToken()}` } })
+    axios.get(`${API_END_POINT}/profile`, { headers: { Authorization: `Bearer ${getJSONIdToken()}` } })
       .then((res) => {
         resolve(res.data);
       })
