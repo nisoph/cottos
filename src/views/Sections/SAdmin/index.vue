@@ -26,7 +26,7 @@
                   </template>
                 </b-table>
                 <hr />
-                <b-button href="#" variant="primary"><icon name="plus-square"></icon> Nuevo Coto</b-button>
+                <b-button href="#" to="/sadmin/addCoto" variant="primary"><icon name="plus-square"></icon> Nuevo Coto</b-button>
             </b-card>
           </b-col>
       </b-row>
@@ -53,9 +53,6 @@ export default {
       getCotos().then((res) => {
         this.items = res.cotos;
       });
-    },
-    fullName(value) {
-      return `${value.nombre} ${value.apellido}`;
     },
   },
   mounted() {
