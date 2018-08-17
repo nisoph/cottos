@@ -74,7 +74,7 @@ export default {
         this.profileInfo[0].nombre = profile.user.nombre;
         this.profileInfo[0].apellido = profile.user.apellido;
         this.profileInfo[0].email = profile.user.email;
-        this.profileImgUrl = profile.user.profile_img;
+        this.profileImgUrl = profile.user.perfil_img;
         this.profileLoaded = true;
       });
     },
