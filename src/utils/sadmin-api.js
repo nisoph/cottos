@@ -13,6 +13,18 @@ export function getCotos() {
   });
 }
 
+export function addCoto(value) {
+  return new Promise((resolve, reject) => {
+    axios.post(`${API_END_POINT}/sadmin/coto`, value, { headers: { Authorization: `Bearer ${getJSONIdToken()}` } })
+      .then((res) => {
+        resolve(res.data);
+      })
+      .catch((err) => {
+        reject(err.response.data);
+      });
+  });
+}
+
 /**
  * TO Remove (Quick Fix)
  */

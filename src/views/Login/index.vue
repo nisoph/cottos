@@ -30,7 +30,7 @@
                     placeholder="Contraseña de acceso">
       </b-form-input>
     </b-form-group>
-    <b-button class="btn-block" type="submit" size="lg" variant="primary" :disabled="isLoading">Entrar</b-button>
+    <b-button class="btn-block" type="submit" size="lg" variant="primary" :disabled="isLoading">{{btnLabel}}</b-button>
   </b-form>
 </template>
 
@@ -50,11 +50,13 @@ export default {
       errMessage: '',
       show: true,
       isLoading: false,
+      btnLabel: 'Entrar',
     };
   },
   methods: {
     onSubmit(evt) {
       this.isLoading = true;
+      this.btnLabel = 'Verificando...';
       evt.preventDefault();
       login(this.form).then((res) => {
         const authUser = {};
@@ -79,12 +81,14 @@ export default {
           this.loginError = true;
           this.errMessage = res.message;
           this.isLoading = false;
+          this.btnLabel = 'Entrar';
         }
       },
         (err) => {
           this.loginError = true;
           this.errMessage = err.message;
           this.isLoading = false;
+          this.btnLabel = 'Entrar';
         },
       );
     },
