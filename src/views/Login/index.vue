@@ -2,7 +2,7 @@
   <b-container>
     <b-row>
       <b-col class="mt-5">
-        <b-card class="mt-5 mb-2" header-bg-variant="white">
+        <b-card class="mt-4 mb-2" header-bg-variant="white">
           <div class="card-text">
             <b-form class="form-signin" @submit="onSubmit" v-if="show">
             <b-alert variant="danger" dismissible :show="loginError" @dismissed="true">{{this.errMessage}}</b-alert>
