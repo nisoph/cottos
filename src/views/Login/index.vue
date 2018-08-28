@@ -1,37 +1,47 @@
 <template>
-  <b-form class="form-signin" @submit="onSubmit" v-if="show">
-    <b-alert variant="danger" dismissible :show="loginError" @dismissed="true">{{this.errMessage}}</b-alert>
-    <div class="text-center">
-      <img class="mb-4" src="../../assets/konddify_logo.png" alt="" height="72">
-      <h3 class="mb-4 mt-5 text-muted">Inicio de Sesión</h3>
-    </div>
-    <b-form-group 
-                id="exampleInputGroup1"
-                label="Email:" label-for="email" class="text-muted font-weight-bold">
-      <b-form-input 
-                  id="email"
-                  class="form-control"
-                  type="email" 
-                  v-model="form.email" 
-                  required 
-                  placeholder="Email para acceso">
-      </b-form-input>
-    </b-form-group>
-    <b-form-group 
-                id="exampleInputGroup2"
-                label="Contraseña:" 
-                label-for="password" class="text-muted font-weight-bold">
-      <b-form-input 
-                    id="password" 
-                    class="form-control"
-                    type="password" 
-                    v-model="form.password" 
-                    required 
-                    placeholder="Contraseña de acceso">
-      </b-form-input>
-    </b-form-group>
-    <b-button class="btn-block" type="submit" size="lg" variant="primary" :disabled="isLoading">{{btnLabel}}</b-button>
-  </b-form>
+  <b-container>
+    <b-row>
+      <b-col class="mt-5">
+        <b-card class="mt-5 mb-2" header-bg-variant="white">
+          <div class="card-text">
+            <b-form class="form-signin" @submit="onSubmit" v-if="show">
+            <b-alert variant="danger" dismissible :show="loginError" @dismissed="true">{{this.errMessage}}</b-alert>
+            <div class="text-center">
+              <img class="mb-4" src="../../assets/konddify_logo.png" alt="" height="72">
+              <h3 class="mb-4 mt-5 text-muted">Inicio de Sesión</h3>
+            </div>
+                <b-form-group 
+                        id="exampleInputGroup1"
+                        label="Email:" label-for="email" class="text-muted font-weight-bold">
+                  <b-form-input 
+                          id="email"
+                          class="form-control"
+                          type="email" 
+                          v-model="form.email" 
+                          required 
+                          placeholder="Email para acceso">
+                  </b-form-input>
+                </b-form-group>
+                <b-form-group 
+                        id="exampleInputGroup2"
+                        label="Contraseña:" 
+                        label-for="password" class="text-muted font-weight-bold">
+                  <b-form-input 
+                            id="password" 
+                            class="form-control"
+                            type="password" 
+                            v-model="form.password" 
+                            required 
+                            placeholder="Contraseña de acceso">
+                  </b-form-input>
+                </b-form-group>
+                <b-button class="btn-block" type="submit" size="lg" variant="primary" :disabled="isLoading"><icon name="check"></icon>  {{btnLabel}}</b-button>
+              </b-form>
+              </div>
+        </b-card>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
