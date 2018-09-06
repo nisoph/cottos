@@ -1,7 +1,7 @@
 <template>
   <b-container>
     <b-row>
-      <b-col class="mt-5" md="6" offset-md="3">
+      <b-col class="mt-4" md="6" offset-md="3">
         <b-card class="mt-5 mb-2" header-bg-variant="white">
           <div class="card-text">
             <b-form class="form-signin" @submit="onSubmit" v-if="show">
