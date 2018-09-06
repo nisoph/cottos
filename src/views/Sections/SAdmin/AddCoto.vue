@@ -96,10 +96,10 @@ export default {
           // console.log(res.message);
         }
       },
-        (err) => {
+        /* (err) => {
           // FIX IT
           console.error(err);
-        },
+        }, */
       );
     },
     onReset(evt) {
