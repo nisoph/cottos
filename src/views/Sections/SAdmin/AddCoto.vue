@@ -7,7 +7,7 @@
           <b-card class="mt-3 mb-3" header-tag="header" footer-tag="footer" header-bg-variant="white">
             <h6 slot="header" class="font-weight-bold mb-0">Agregar Nuevo Coto</h6>
             <div class="card-text">
-              <b-form enctype="multipart/form-data" @submit="onSubmit" @reset="onReset" v-if="show">
+              <b-form enctype="multipart/form-data" @submit="onSubmit" v-if="show">
                 <b-form-group horizontal breakpoint="lg" label="Datos del Coto" label-size="md" label-class="font-weight-bold pt-0" class="mb-0">
                   <b-form-group horizontal id="nombreCotoGroup" label="Nombre del Coto:" label-for="nombreCoto">
                     <b-form-input id="nombreCoto" type="text" v-model="form.nombreCoto" required></b-form-input>
@@ -37,7 +37,7 @@
                     <b-form-input id="telEmergenciaCoto" type="number" v-model="form.telEmergenciaCoto" required></b-form-input>
                   </b-form-group>
                   <b-form-group horizontal id="imgCotoGroup" label="Logo del Coto:" label-for="imgCoto">
-                    <b-form-file id="imgCoto" v-model="form.imgCoto" accept="image/*" required placeholder="Seleccionar Logo..."></b-form-file>
+                    <b-form-file id="imgCoto" v-model="form.imgCoto" ref="imgCoto" accept="image/*" required placeholder="Seleccionar Logo..." @change="handleFileUpload()"></b-form-file>
                   </b-form-group>
                 </b-form-group>
                 <hr>
@@ -56,7 +56,7 @@
                   </b-form-group>
                 </b-form-group>
                 <b-button type="submit" class="mt-4 btn-block" size="md" variant="primary"><icon name="check"></icon> Crear</b-button>
-                <b-button type="reset" class="mb-2 btn-block" size="md" variant="danger"><icon name="eraser"></icon> Borrar</b-button>
+                <b-button class="mb-2 btn-block" size="md" variant="danger" href="#" to="/sadmin/home"><icon name="ban"></icon> Cancelar</b-button>
               </b-form>
             </div>
           </b-card>
@@ -78,16 +78,34 @@ export default {
   data() {
     return {
       form: {
-        nombreCoto: '',
-        direccionCoto: '',
+        imgCoto: '',
       },
       show: true,
+      file: '',
     };
   },
   methods: {
+    handleFileUpload() {
+      this.form.imgCoto = this.$refs.imgCoto.$refs.input.files[0];
+    },
     onSubmit(evt) {
       evt.preventDefault();
-      addCoto(this.form).then((res) => {
+      const formData = new FormData(this.form);
+      formData.append('nombreCoto', this.form.nombreCoto);
+      formData.append('direccionCoto', this.form.direccionCoto);
+      formData.append('numeroExtCoto', this.form.numeroExtCoto);
+      formData.append('coloniaCoto', this.form.coloniaCoto);
+      formData.append('estadoCoto', this.form.estadoCoto);
+      formData.append('ciudadCoto', this.form.ciudadCoto);
+      formData.append('cpCoto', this.form.cpCoto);
+      formData.append('telContactoCoto', this.form.telContactoCoto);
+      formData.append('telEmergenciaCoto', this.form.telEmergenciaCoto);
+      formData.append('imgCoto', this.form.imgCoto);
+      formData.append('nombreAdminCoto', this.form.nombreAdminCoto);
+      formData.append('apellidoAdminCoto', this.form.apellidoAdminCoto);
+      formData.append('adminCotoEmail', this.form.adminCotoEmail);
+
+      addCoto(formData).then((res) => {
         const app = this;
         if (res.success) {
           app.$router.push('/sadmin/home');
@@ -101,17 +119,6 @@ export default {
           console.error(err);
         }, */
       );
-    },
-    onReset(evt) {
-      evt.preventDefault();
-      /* Reset our form values */
-      this.form.nombreCoto = '';
-      this.form.direccionCoto = '';
-      /* Trick to reset/clear native browser form validation state */
-      this.show = false;
-      this.$nextTick(() => {
-        this.show = true;
-      });
     },
   },
 };

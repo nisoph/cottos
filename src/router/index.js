@@ -12,6 +12,7 @@ import ResidentRegulation from '@/views/Sections/Resident/Regulation/index';
 import ResidentReports from '@/views/Sections/Resident/Reports/index';
 import SAdminHome from '@/views/Sections/SAdmin/index';
 import SAdminAddCoto from '@/views/Sections/SAdmin/AddCoto';
+import SAdminViewCoto from '@/views/Sections/SAdmin/ViewCoto';
 import AdminHome from '@/views/Sections/Admin/index';
 import SecurityHome from '@/views/Sections/Security/index';
 
@@ -122,6 +123,17 @@ const routes = [
     path: '/sadmin/addCoto',
     name: 'sadmin-add-coto',
     component: SAdminAddCoto,
+    meta: {
+      requiresAuth: true,
+      sAdminAuth: true,
+      adminAuth: false,
+      residentAuth: false,
+      securityAuth: false },
+  },
+  {
+    path: '/sadmin/viewCoto/:cotoId',
+    name: 'sadmin-view-coto',
+    component: SAdminViewCoto,
     meta: {
       requiresAuth: true,
       sAdminAuth: true,
