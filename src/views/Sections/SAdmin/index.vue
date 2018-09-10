@@ -8,9 +8,6 @@
                   <h6 slot="header" class="mb-0">Lista de Cotos</h6>
                   <div class="card-text">
                     <b-table responsive striped hover :items="items" :fields="fields" @row-clicked="cotoDetails">
-                      <template slot="nombrecompleto" slot-scope="data">
-                        {{data.item.nombre}} {{data.item.apellido}}
-                      </template>
                     </b-table>
                     <hr />
                     <b-button class="btn-block" size="md" href="#" to="/sadmin/addCoto" variant="primary"><icon name="plus-square"></icon> Nuevo Coto</b-button>
@@ -55,7 +52,7 @@ export default {
     return {
       items: [],
       fields: [
-        'id', 'coto', 'colonia', { key: 'nombrecompleto', label: 'Administrador' },
+        'id', 'coto', 'colonia',
       ],
     };
   },
