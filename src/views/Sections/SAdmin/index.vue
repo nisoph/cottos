@@ -8,9 +8,6 @@
                   <h6 slot="header" class="mb-0">Lista de Cotos</h6>
                   <div class="card-text">
                     <b-table responsive striped hover :items="items" :fields="fields" @row-clicked="cotoDetails">
-                      <!-- <template slot="coto" slot-scope="data">
-                        <a class="text-danger" href="#">{{data.value}}</a>
-                      </template> -->
                       <template slot="nombrecompleto" slot-scope="data">
                         {{data.item.nombre}} {{data.item.apellido}}
                       </template>
