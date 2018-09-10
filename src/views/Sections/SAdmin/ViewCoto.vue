@@ -1,7 +1,7 @@
 <template>
   <div>
     <app-nav-s-admin></app-nav-s-admin>
-    <b-container fluid>
+    <b-container fluid v-if="infoLoaded">
       <b-row>
         <b-col class="mb-3">
           <b-img v-if="coto_logo" center rounded="circle" thumbnail fluid :src="coto_logo" alt="Thumbnail" />
@@ -65,6 +65,7 @@ export default {
       ],
       cotoId: '',
       coto_logo: '',
+      infoLoaded: false,
     };
   },
   methods: {
@@ -73,6 +74,7 @@ export default {
       getCoto(this.cotoId).then((res) => {
         this.items = res.coto;
         this.coto_logo = this.items[0].coto_img;
+        this.infoLoaded = true;
       });
     },
   },
