@@ -1,5 +1,6 @@
 // export const API_END_POINT = 'http://localhost:3000/api/v1';
-export const API_END_POINT = 'https://konddify-api.herokuapp.com/api/v1';
+// export const API_END_POINT = 'https://konddify-api.herokuapp.com/api/v1';
+export const API_END_POINT = process.env.KONDDIFY_API_URL;
 export const ID_LS_KEY = 'userinfo';
 export const ID_TOKEN_KEY = 'token';
 export const ROLE_SADMIN = 'SADMIN';

@@ -1,3 +1,4 @@
+require('dotenv').config()
 require('./check-versions')()
 
 var config = require('../config')
