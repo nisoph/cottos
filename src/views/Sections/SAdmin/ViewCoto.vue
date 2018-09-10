@@ -4,7 +4,8 @@
     <b-container fluid>
       <b-row>
           <b-col>
-            
+            <b-table stacked :items="items">
+            </b-table>
           </b-col>
       </b-row>
     </b-container>
