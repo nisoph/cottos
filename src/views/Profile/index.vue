@@ -2,6 +2,7 @@
   <div>
     <app-nav v-if="isResidentRole()"></app-nav>
     <app-nav-s-admin v-else-if="isSAdminRole()"></app-nav-s-admin>
+    <app-nav-admin v-else-if="isAdminRole()"></app-nav-admin>
     <app-nav-simple v-else></app-nav-simple>
 
     <b-container class="mt-3">
@@ -40,6 +41,7 @@
 <script>
 import AppNav from '../../components/AppNav';
 import AppNavSAdmin from '../../components/AppNavSAdmin';
+import AppNavAdmin from '../../components/AppNavAdmin';
 import AppNavSimple from '../../components/AppNavSimple';
 import { isSuperAdmin, isResidentAdmin, isResident, isResidentSecurity } from '../../utils/auth-api';
 import { getProfile } from '../../utils/info-api';
@@ -47,7 +49,7 @@ import { getProfile } from '../../utils/info-api';
 export default {
   name: 'info-profile',
   components: {
-    AppNav, AppNavSimple, AppNavSAdmin,
+    AppNav, AppNavSAdmin, AppNavAdmin, AppNavSimple,
   },
   data() {
     return {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-nav-simple></app-nav-simple>
+    <app-nav-admin></app-nav-admin>
 
     <b-container class="mt-3">
         <b-row>
@@ -21,12 +21,12 @@
 </template>
 
 <script>
-import AppNavSimple from '../../../components/AppNavSimple';
+import AppNavAdmin from '../../../components/AppNavAdmin';
 
 export default {
   name: 'admin-home',
   components: {
-    AppNavSimple,
+    AppNavAdmin,
   },
   methods: {
     isLoggedIn() {
