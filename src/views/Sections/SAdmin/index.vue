@@ -3,37 +3,37 @@
     <app-nav-s-admin></app-nav-s-admin>
     <b-container fluid>
       <b-row>
-          <b-col>
-            <b-card class="mt-4 mb-2" header-tag="header" header-bg-variant="white">
-                  <h6 slot="header" class="mb-0">Lista de Cotos</h6>
-                  <div class="card-text">
-                    <b-table responsive striped hover :items="items" :fields="fields" @row-clicked="cotoDetails">
-                    </b-table>
-                    <hr />
-                    <b-button class="btn-block" size="md" href="#" to="/sadmin/addCoto" variant="primary"><icon name="plus-square"></icon> Nuevo Coto</b-button>
-                  </div>
-            </b-card>
-          </b-col>
-          <b-col>
-            <b-card class="mt-4 mb-2" header-tag="header" header-bg-variant="white" header-text-variant="bold">
-                  <h6 slot="header" class="mb-0">Propiedades por Coto</h6>
-                  <div class="card-text">
-                    <hr />
-                    <b-button class="btn-block" size="md" href="#" variant="primary"><icon name="plus"></icon> Detalles</b-button>
-                  </div>
-            </b-card>
-          </b-col>
+        <b-col>
+          <b-card class="mt-4 mb-2" header-tag="header" header-bg-variant="white">
+            <h6 slot="header" class="mb-0">Lista de Cotos</h6>
+            <div class="card-text">
+              <b-table responsive striped hover :items="items" :fields="fields" @row-clicked="cotoDetails">
+              </b-table>
+              <hr />
+              <b-button class="btn-block" size="md" href="#" to="/sadmin/addCoto" variant="primary"><icon name="plus-square"></icon> Nuevo Coto</b-button>
+            </div>
+          </b-card>
+        </b-col>
+        <b-col>
+          <b-card class="mt-4 mb-2" header-tag="header" header-bg-variant="white">
+            <h6 slot="header" class="mb-0">Propiedades por Coto</h6>
+            <div class="card-text">
+              <hr />
+              <b-button class="btn-block" size="md" href="#" variant="primary"><icon name="plus"></icon> Detalles</b-button>
+            </div>
+          </b-card>
+        </b-col>
       </b-row>
       <b-row>
-          <b-col>
-            <b-card class="mt-3 mb-2" header-tag="header" header-bg-variant="white">
-                  <h6 slot="header" class="mb-0">Publiciad por Coto</h6>
-                  <div class="card-text">
-                    <hr />
-                    <b-button class="btn-block" size="md" href="#" variant="primary"><icon name="plus"></icon> Detalles</b-button>
-                  </div>
-            </b-card>
-          </b-col>
+        <b-col>
+          <b-card class="mt-3 mb-2" header-tag="header" header-bg-variant="white">
+            <h6 slot="header" class="mb-0">Publiciad por Coto</h6>
+            <div class="card-text">
+              <hr />
+              <b-button class="btn-block" size="md" href="#" variant="primary"><icon name="plus"></icon> Detalles</b-button>
+            </div>
+          </b-card>
+        </b-col>
       </b-row>
     </b-container>
   </div>

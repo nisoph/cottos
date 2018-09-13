@@ -2,20 +2,47 @@
   <div>
     <app-nav-admin></app-nav-admin>
 
-    <b-container class="mt-3">
-        <b-row>
-            <b-col><h3 class="text-center">Panel de Administración</h3></b-col>
-        </b-row>
-    </b-container>
-
-    <hr/>
-
-    <b-container>
-        <b-row>
-            <b-col>
-
-            </b-col>
-        </b-row>
+    <b-container fluid>
+      <b-row>
+        <b-col>
+          <b-card class="mt-4 mb-2" header-tag="header" header-bg-variant="white">
+            <h6 slot="header" class="mb-0">Adeudos por Propiedades</h6>
+            <div class="card-text">
+              <hr />
+              <b-button class="btn-block" size="md" href="#" variant="success"><icon name="money"></icon> Agregar Pago</b-button>
+            </div>
+          </b-card>
+        </b-col>
+        <b-col>
+          <b-card class="mt-4 mb-2" header-tag="header" header-bg-variant="white">
+            <h6 slot="header" class="mb-0">Incidentes por Propiedades</h6>
+            <div class="card-text">
+              <hr />
+              <b-button class="btn-block" size="md" href="#" variant="primary"><icon name="plus"></icon> Nuevo</b-button>
+            </div>
+          </b-card>
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col>
+          <b-card class="mt-4 mb-2" header-tag="header" header-bg-variant="white">
+            <h6 slot="header" class="mb-0">Eventos Agendados</h6>
+            <div class="card-text">
+              <hr />
+              <b-button class="btn-block" size="md" href="#" variant="primary"><icon name="plus"></icon> Nuevo</b-button>
+            </div>
+          </b-card>
+        </b-col>
+        <b-col>
+        <b-card class="mt-4 mb-2" header-tag="header" header-bg-variant="white">
+          <h6 slot="header" class="mb-0">Últimos avisos</h6>
+          <div class="card-text">
+            <hr />
+            <b-button class="btn-block" size="md" href="#" variant="primary"><icon name="plus"></icon> Nuevo</b-button>
+          </div>
+        </b-card>
+      </b-col>
+    </b-row>
     </b-container>
   </div>
 </template>
