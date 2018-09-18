@@ -4,8 +4,8 @@
     <b-container fluid v-if="infoLoaded">
       <b-row>
         <b-col class="mb-3 mt-3">
-          <b-img v-if="coto_logo" center rounded="circle" thumbnail fluid :src="coto_logo" alt="Thumbnail" />
-          <b-img v-else center rounded="circle" thumbnail fluid src="https://picsum.photos/150/150/?image=58" alt="Thumbnail" />
+          <b-img v-if="coto_logo" center rounded="circle" thumbnail fluid :src="coto_logo" alt="logo" width="150" height="150" />
+          <b-img v-else center rounded="circle" thumbnail fluid src="https://picsum.photos/150/150/?image=58" alt="logo" width="150" height="150" />
         </b-col>
       </b-row>
       <b-row>

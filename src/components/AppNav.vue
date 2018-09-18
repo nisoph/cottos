@@ -7,12 +7,17 @@
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav class="ml-auto text-right">
         <div class="logo d-md-none d-lg-none d-xl-none mt-2"></div>
-        <b-nav-item href="#" to="/info/profile"><icon name="user"></icon> Perfil</b-nav-item>
         <b-nav-item href="#" to="/resident/notifications"><icon name="bell"></icon> Avisos <b-badge variant="danger" style="vertical-align: super;">2</b-badge></b-nav-item>
         <b-nav-item href="#" to="/resident/promotions"><icon name="shopping-bag"></icon> Servicios</b-nav-item>
         <b-nav-item href="#" to="/resident/bookings"><icon name="calendar"></icon> Reservar</b-nav-item>
         <b-nav-item href="#" to="/resident/regulation"><icon name="gavel"></icon> Reglamentos</b-nav-item>
         <b-nav-item href="#" to="/resident/reports"><icon name="file"></icon> Reportes</b-nav-item>
+        <b-nav-item-dropdown no-caret>
+          <template slot="button-content">
+            <span><icon name="cogs"></icon> Configuración</span>
+          </template>
+          <b-dropdown-item class="text-right" href="#" to="/info/profile"><icon name="user"></icon> Perfil</b-dropdown-item>
+        </b-nav-item-dropdown>
         <div class="logo d-md-none mb-2 d-lg-none d-xl-none"></div>
         <b-button variant="danger" size="sm" type="submit"><icon name="exclamation-triangle"></icon> Emergencia</b-button>
         <div class="logo d-md-none mt-2 d-lg-none d-xl-none"></div>

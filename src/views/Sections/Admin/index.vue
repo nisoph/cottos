@@ -6,7 +6,7 @@
       <b-row>
         <b-col>
           <b-card class="mt-4 mb-2" header-tag="header" header-bg-variant="white">
-            <h6 slot="header" class="mb-0">Adeudos por Propiedades</h6>
+            <h6 slot="header" class="mb-0">Adeudos</h6>
             <div class="card-text">
               <hr />
               <b-button class="btn-block" size="md" href="#" variant="success"><icon name="money"></icon> Agregar Pago</b-button>
@@ -15,7 +15,7 @@
         </b-col>
         <b-col>
           <b-card class="mt-4 mb-2" header-tag="header" header-bg-variant="white">
-            <h6 slot="header" class="mb-0">Incidentes por Propiedades</h6>
+            <h6 slot="header" class="mb-0">Incidentes</h6>
             <div class="card-text">
               <hr />
               <b-button class="btn-block" size="md" href="#" variant="primary"><icon name="plus"></icon> Nuevo</b-button>
@@ -26,7 +26,7 @@
       <b-row>
         <b-col>
           <b-card class="mt-4 mb-2" header-tag="header" header-bg-variant="white">
-            <h6 slot="header" class="mb-0">Eventos Agendados</h6>
+            <h6 slot="header" class="mb-0">Eventos</h6>
             <div class="card-text">
               <hr />
               <b-button class="btn-block" size="md" href="#" variant="primary"><icon name="plus"></icon> Nuevo</b-button>
@@ -35,7 +35,7 @@
         </b-col>
         <b-col>
         <b-card class="mt-4 mb-2" header-tag="header" header-bg-variant="white">
-          <h6 slot="header" class="mb-0">Últimos avisos</h6>
+          <h6 slot="header" class="mb-0">Avisos</h6>
           <div class="card-text">
             <hr />
             <b-button class="btn-block" size="md" href="#" variant="primary"><icon name="plus"></icon> Nuevo</b-button>
