@@ -15,6 +15,7 @@ import SAdminAddCoto from '@/views/Sections/SAdmin/AddCoto';
 import SAdminViewCoto from '@/views/Sections/SAdmin/ViewCoto';
 import AdminHome from '@/views/Sections/Admin/index';
 import AdminAddProperty from '@/views/Sections/Admin/AddProperty';
+import AdminListProperties from '@/views/Sections/Admin/ListProperties';
 import SecurityHome from '@/views/Sections/Security/index';
 
 import { getJSONLSData, ROLE_SADMIN, ROLE_ADMIN, ROLE_RESIDENT, ROLE_SECURITY } from '../app.config';
@@ -159,7 +160,18 @@ const routes = [
     component: AdminAddProperty,
     meta: {
       requiresAuth: true,
-      sAdminAuth: false,
+      sAdminAuth: true,
+      adminAuth: true,
+      residentAuth: false,
+      securityAuth: false },
+  },
+  {
+    path: '/admin/properties',
+    name: 'admin-list-propierties',
+    component: AdminListProperties,
+    meta: {
+      requiresAuth: true,
+      sAdminAuth: true,
       adminAuth: true,
       residentAuth: false,
       securityAuth: false },

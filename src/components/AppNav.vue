@@ -16,7 +16,7 @@
           <template slot="button-content">
             <span><icon name="cogs"></icon> Configuración</span>
           </template>
-          <b-dropdown-item class="text-right" href="#" to="/info/profile"><icon name="user"></icon> Perfil</b-dropdown-item>
+          <b-dropdown-item href="#" to="/info/profile"><icon name="user"></icon> Perfil</b-dropdown-item>
         </b-nav-item-dropdown>
         <div class="logo d-md-none mb-2 d-lg-none d-xl-none"></div>
         <b-button variant="danger" size="sm" type="submit"><icon name="exclamation-triangle"></icon> Emergencia</b-button>

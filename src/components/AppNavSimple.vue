@@ -11,7 +11,7 @@
           <template slot="button-content">
             <span><icon name="cogs"></icon> Configuración</span>
           </template>
-          <b-dropdown-item class="text-right" href="#" to="/info/profile"><icon name="user"></icon> Perfil</b-dropdown-item>
+          <b-dropdown-item href="#" to="/info/profile"><icon name="user"></icon> Perfil</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item href="#" @click="handleLogout()" v-if="isLoggedIn"><icon name="sign-out"></icon> Salir</b-nav-item>
       </b-navbar-nav>
