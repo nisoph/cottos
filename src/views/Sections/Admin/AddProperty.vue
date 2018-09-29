@@ -53,7 +53,7 @@
 
 <script>
 import AppNavAdmin from '../../../components/AppNavAdmin';
-// import { addCoto } from '../../../utils/sadmin-api';
+import { getCotoInfo } from '../../../utils/admin-api';
 
 export default {
   name: 'admin-add-property',
@@ -64,11 +64,17 @@ export default {
     return {
       form: {
         imgCoto: '',
+        nombreCoto: '',
       },
       show: true,
     };
   },
   methods: {
+    getCotoInformation() {
+      getCotoInfo().then((cotoInfo) => {
+        this.form.nombreCoto = cotoInfo.coto.nombre;
+      });
+    },
     onSubmit(evt) {
       evt.preventDefault();
       /* const formData = new FormData(this.form);
@@ -98,6 +104,9 @@ export default {
 
       ); */
     },
+  },
+  mounted() {
+    this.getCotoInformation();
   },
 };
 </script>
