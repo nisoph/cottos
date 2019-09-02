@@ -94,12 +94,12 @@ export default {
           this.btnLabel = 'Entrar';
         }
       },
-        (err) => {
-          this.loginError = true;
-          this.errMessage = err.message;
-          this.isLoading = false;
-          this.btnLabel = 'Entrar';
-        },
+      (err) => {
+        this.loginError = true;
+        this.errMessage = err.message;
+        this.isLoading = false;
+        this.btnLabel = 'Entrar';
+      },
       );
     },
     loginAuth() {
